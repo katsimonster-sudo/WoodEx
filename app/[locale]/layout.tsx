@@ -17,7 +17,7 @@ export default async function LocaleLayout({ children, params: { locale } }: { c
       <body>
         <NextIntlClientProvider messages={messages}>
           <Header />
-          <main style={{ minHeight: 'calc(100vh - 350px)', paddingTop: '85px' }}>{children}</main>
+          <main style={{ minHeight: 'calc(100vh - 350px)', paddingTop: '64px' }}>{children}</main>
           <Footer />
         </NextIntlClientProvider>
       </body>
