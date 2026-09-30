@@ -1,0 +1,22 @@
+.page {}
+.hero { text-align: center; background: radial-gradient(ellipse at 50% 0%, rgba(201,146,58,0.1) 0%, transparent 60%); }
+.heroContent { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem; align-items: center; }
+.heroText { color: var(--text-secondary); font-size: 1.15rem; line-height: 1.75; }
+.values { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.valueCard { padding: 2.5rem 1.75rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.valueIcon { font-size: 2.5rem; }
+.valueCard h3 { font-size: 1.2rem; color: var(--accent-light); }
+.valueCard p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+.timeline { position: relative; max-width: 900px; margin: 0 auto; }
+.timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--accent-gold), var(--accent-copper)); transform: translateX(-50%); opacity: 0.3; }
+.milestone { display: grid; grid-template-columns: 1fr 20px 1fr; align-items: center; gap: 2rem; margin-bottom: 2.5rem; }
+.milestoneYear { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--accent-gold); }
+.left .milestoneYear { text-align: right; }
+.right .milestoneYear { order: 3; text-align: left; }
+.right .milestoneDot { order: 2; }
+.right .milestoneCard { order: 1; }
+.milestoneDot { width: 16px; height: 16px; border-radius: 50%; background: var(--accent-gold); border: 3px solid var(--bg-primary); box-shadow: 0 0 12px var(--accent-glow); justify-self: center; }
+.milestoneCard { padding: 1.25rem 1.5rem; }
+.milestoneCard p { color: var(--text-secondary); font-size: 0.97rem; line-height: 1.6; }
+@media (max-width: 900px) { .values { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .values { grid-template-columns: 1fr; } .milestone { grid-template-columns: 1fr; text-align: center; } .timeline::before { display: none; } .milestoneYear, .left .milestoneYear, .right .milestoneYear { text-align: center; order: 0; } .milestoneDot { display: none; } .right .milestoneCard { order: 1; } }

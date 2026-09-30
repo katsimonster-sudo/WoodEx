@@ -1,0 +1,24 @@
+.portfolio {}
+.filters { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
+.filterBtn { padding: 0.6rem 1.5rem; border-radius: var(--radius-full); border: 1px solid var(--border); background: transparent; color: var(--text-secondary); font-size: 0.93rem; font-weight: 500; cursor: pointer; transition: var(--transition); font-family: var(--font-body); }
+.filterBtn:hover { color: var(--accent-light); border-color: var(--accent-gold); background: rgba(201,146,58,0.07); }
+.filterActive { background: linear-gradient(135deg, var(--accent-gold), var(--accent-copper)) !important; color: #1a0e05 !important; border-color: transparent !important; font-weight: 700 !important; }
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: auto; gap: 1.5rem; }
+.item { position: relative; border-radius: var(--radius-md); overflow: hidden; cursor: pointer; }
+.featured { grid-column: span 2; grid-row: span 2; }
+.imgWrap { position: relative; width: 100%; padding-bottom: 100%; overflow: hidden; }
+.featured .imgWrap { padding-bottom: 100%; }
+.imgWrap img { transition: transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+.item:hover .imgWrap img { transform: scale(1.08); }
+.overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(12,7,3,0.92) 0%, rgba(12,7,3,0.2) 60%, transparent 100%); opacity: 0; transition: var(--transition); display: flex; align-items: flex-end; padding: 1.5rem; }
+.item:hover .overlay { opacity: 1; }
+.overlayContent { display: flex; flex-direction: column; gap: 0.6rem; }
+.woodType { color: var(--accent-light); font-size: 0.82rem; font-weight: 600; }
+.overlayContent h3 { color: var(--text-primary); font-size: 1.2rem; }
+.overlayContent p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; }
+.info { padding: 0.9rem 0.2rem; }
+.cat { font-size: 0.78rem; color: var(--accent-gold); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+.title { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; margin-top: 0.25rem; color: var(--text-primary); }
+@media (max-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 768px) { .grid { grid-template-columns: repeat(2, 1fr); } .featured { grid-column: span 2; } }
+@media (max-width: 480px) { .grid { grid-template-columns: 1fr; } .featured { grid-column: span 1; } }
