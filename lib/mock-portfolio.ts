@@ -1,6 +1,17 @@
 import type { PortfolioItem } from './types';
 
 export const portfolioItems: PortfolioItem[] = [
+  {
+    id: 'p-madonna',
+    category: 'carving',
+    slug: 'madonna-child-relief',
+    titleUk: 'Барельєф «Благословення Мадонни»',
+    titleEn: "Bas-Relief «Madonna's Blessing»",
+    descUk: 'Монументальне сакральне панно за мотивами класичного Ренесансу. Багатопланова об’ємна різьба по масиву дерева в пишній бароковій акантовій рамі.',
+    descEn: 'Monumental sacred relief inspired by Renaissance classics. Multi-layered intricate wood carving in an ornate baroque acanthus frame.',
+    image: '/images/portfolio/madonna-child-relief.jpg',
+    woodType: 'Масив дуба / горіха',
+  },
   { id: 'p1', category: 'lighting', slug: 'pendent-oak', titleUk: 'Підвісна лампа з дуба', titleEn: 'Oak Pendant Lamp', descUk: 'Ручна різьба по мореному дубу. Унікальна форма, тепле світло.', descEn: 'Hand-carved aged oak. Unique form, warm glow.', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80', woodType: 'Дуб морений' },
   { id: 'p2', category: 'carving', slug: 'relief-forest', titleUk: 'Рельєф «Ліс»', titleEn: 'Forest Relief', descUk: 'Об\'ємний рельєф із горіха, 120×80 см. Фотореалістичні деталі.', descEn: 'Walnut relief, 120×80 cm. Photorealistic detail.', image: 'https://images.unsplash.com/photo-1520923642038-b4259acecbd7?w=600&q=80', woodType: 'Горіх' },
   { id: 'p3', category: 'rustic', slug: 'live-edge-table', titleUk: 'Стіл Live Edge', titleEn: 'Live Edge Table', descUk: 'Слябовий стіл із живим краєм. Акація + метал.', descEn: 'Live edge slab table. Acacia + steel.', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80', woodType: 'Акація' },
