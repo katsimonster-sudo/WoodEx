@@ -14,6 +14,18 @@ export const portfolioItems: PortfolioItem[] = [
     dimensions: '60 × 45 см',
   },
   {
+    id: 'p-fairy-dresser',
+    category: 'furniture',
+    slug: 'fairy-carved-dresser',
+    titleUk: 'Ексклюзивний комод «Казка Лісу» (з різьбленими феями)',
+    titleEn: 'Bespoke Dresser «Forest Fairy» (Carved Mythic Credenza)',
+    descUk: 'Авторський комод із масиву натурального дерева. Фасади оздоблені витонченою об’ємною різьбою лісових фей, центральний блок на 4 висувні шухляди з флористичними ручками, класичні канельовані пілястри та благородне текстурне патинування.',
+    descEn: 'Bespoke solid wood sideboard dresser. Cabinet doors featuring intricate relief carvings of forest fairies, 4 central drawers with floral carved rosettes, fluted classical pilasters, and an antiqued patina finish.',
+    image: '/images/portfolio/fairy-carved-dresser.jpg',
+    woodType: 'Масив дуба / ясена з патинуванням (доступно під замовлення)',
+    dimensions: '140 × 90 × 45 см (або за індивідуальними розмірами)',
+  },
+  {
     id: 'p-nymph',
     category: 'carving',
     slug: 'nymph-grace-relief',
