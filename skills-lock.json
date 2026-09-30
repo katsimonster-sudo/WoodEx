@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "skills": {
+    "design-system": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "skillPath": "design/skills/design-system/SKILL.md",
+      "computedHash": "12497053dd5456ed6a80e51826d17c584d422584a1d2f653b4038170e4a3348f"
+    },
+    "design-taste-frontend": {
+      "source": "leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/taste-skill/SKILL.md",
+      "computedHash": "899b84384f74f540ea5284d9b2e9234e050998b42eacc805410b518d4226c0b3"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "computedHash": "b146008599c31057cef1c145774cea5d5afb30e8f43fa802e47a4b461419aaaf"
+    },
+    "product-brainstorming": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "skillPath": "product-management/skills/product-brainstorming/SKILL.md",
+      "computedHash": "595e6cc5bb85da6b67b35c24d4d3906c6bac42a1fe4ecbe71fa154176d724c1b"
+    },
+    "ux-copy": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "skillPath": "design/skills/ux-copy/SKILL.md",
+      "computedHash": "be952a0ebb04d72c59716a5fc9325c30c88eea0aa2a3075c35fb6a6fa28a07e9"
+    },
+    "write-spec": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "skillPath": "product-management/skills/write-spec/SKILL.md",
+      "computedHash": "6ec065dfac46311b9550499997630c62b9748598e3128056ddf58a789162517e"
+    }
+  }
+}
