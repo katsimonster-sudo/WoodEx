@@ -26,6 +26,18 @@ export const portfolioItems: PortfolioItem[] = [
     dimensions: '140 × 90 × 45 см (або за індивідуальними розмірами)',
   },
   {
+    id: 'p-royal-wardrobe',
+    category: 'furniture',
+    slug: 'royal-carved-wardrobe',
+    titleUk: 'Шафа «Королівська Спадщина» (з різьбленими медальйонами)',
+    titleEn: 'Wardrobe «Royal Heritage» (Carved Medallion Cabinet)',
+    descUk: 'Монументальна двостулкова шафа з масиву дерева в класичному стилі. Верхня секція зі скляними дверцятами та ротанговою сіткою, дві висувні шухляди з різьбленими розетками, нижні філенчасті дверцята з об\'ємними овальними медальйонами флоральних орнаментів. Різьблений карниз та фігурний цоколь.',
+    descEn: 'Monumental two-door solid wood wardrobe in a classical style. Upper section with lattice glass doors, two drawers with carved rosettes, lower panelled doors featuring ornate oval floral medallions. Hand-carved cornice crown and shaped plinth base.',
+    image: '/images/portfolio/royal-carved-wardrobe.jpg',
+    woodType: 'Масив дуба / горіха з тонуванням (доступно під замовлення)',
+    dimensions: '200 × 100 × 55 см (або за індивідуальними розмірами)',
+  },
+  {
     id: 'p-nymph',
     category: 'carving',
     slug: 'nymph-grace-relief',
