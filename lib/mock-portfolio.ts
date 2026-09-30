@@ -38,6 +38,18 @@ export const portfolioItems: PortfolioItem[] = [
     dimensions: '200 × 100 × 55 см (або за індивідуальними розмірами)',
   },
   {
+    id: 'p-celtic-bench',
+    category: 'rustic',
+    slug: 'rustic-celtic-bench',
+    titleUk: 'Лавка «Дух Полонини» (живий край з кельтським різьбленням)',
+    titleEn: 'Bench «Highland Spirit» (Live-Edge with Celtic Carving)',
+    descUk: 'Масивна авторська лавка з натурального слябу дерева зі збереженим живим краєм. Спинка прикрашена глибоким рельєфним кельтським орнаментом ручної роботи, ніжки — з натуральних гілок. Ідеальна для саду, тераси чи заміського будинку.',
+    descEn: 'Massive handcrafted bench from a natural wood slab with preserved live edge. Backrest adorned with deep relief Celtic ornament, legs made from natural branches. Perfect for gardens, terraces, or country estates.',
+    image: '/images/portfolio/rustic-celtic-bench.jpg',
+    woodType: 'Масив дуба / ясена (живий край, натуральна текстура)',
+    dimensions: '180 × 45 × 90 см (або за індивідуальними розмірами)',
+  },
+  {
     id: 'p-nymph',
     category: 'carving',
     slug: 'nymph-grace-relief',
