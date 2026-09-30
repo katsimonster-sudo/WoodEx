@@ -1,12 +1,12 @@
 .hero {
   position: relative;
-  min-height: 92vh;
+  min-height: 82vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 115px;
-  padding-bottom: 50px;
+  padding-top: 88px;
+  padding-bottom: 40px;
   overflow: hidden;
   text-align: center;
 }
@@ -25,11 +25,11 @@
 
 .ambientGlow {
   position: absolute;
-  top: 35%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px;
-  height: 600px;
+  width: 550px;
+  height: 550px;
   background: radial-gradient(circle, rgba(201, 146, 58, 0.18) 0%, rgba(181, 116, 58, 0.05) 50%, transparent 70%);
   filter: blur(40px);
   pointer-events: none;
@@ -41,7 +41,7 @@
   z-index: 2;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
 }
 
@@ -49,16 +49,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.15rem;
+  gap: 1rem;
   max-width: 960px;
   margin: 0 auto;
-  padding: 0.5rem 1rem;
+  padding: 0.2rem 1rem 1rem;
 }
 
 .badgeWrapper {
   display: flex;
   justify-content: center;
-  margin-bottom: 0.1rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .brandName {
@@ -110,7 +111,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 0.5rem;
+  margin-top: 0.4rem;
 }
 
 .stats {
@@ -118,8 +119,8 @@
   justify-content: center;
   align-items: center;
   gap: 2.5rem;
-  margin-top: 1.5rem;
-  padding: 1rem 2.5rem;
+  margin-top: 1.4rem;
+  padding: 0.9rem 2.4rem;
   background: rgba(30, 18, 10, 0.45);
   border: 1px solid var(--border);
   border-radius: var(--radius-full);
@@ -153,7 +154,7 @@
 
 .scroll {
   position: relative;
-  margin-top: 2rem;
+  margin-top: 1.8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -168,7 +169,7 @@
 
 .scrollLine {
   width: 1px;
-  height: 28px;
+  height: 25px;
   background: linear-gradient(to bottom, var(--accent-gold), transparent);
 }
 
@@ -183,7 +184,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: 105px;
+    padding-top: 82px;
   }
   .tagline {
     white-space: normal;
@@ -191,7 +192,7 @@
   }
   .stats {
     gap: 1.2rem;
-    padding: 0.9rem 1.4rem;
+    padding: 0.85rem 1.4rem;
     border-radius: var(--radius-lg);
   }
   .ctas {
