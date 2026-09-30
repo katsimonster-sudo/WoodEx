@@ -1,22 +1,204 @@
-.hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 85px; overflow: hidden; }
-.bg { position: absolute; inset: 0; z-index: 0; }
-.overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(12,7,3,0.90) 0%, rgba(18,11,6,0.75) 50%, rgba(12,7,3,0.65) 100%); }
-.content { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 0.7fr; gap: 4rem; align-items: center; padding: 5rem 0; }
-.left { display: flex; flex-direction: column; gap: 1.8rem; }
-.title { line-height: 1.1; color: var(--text-primary); }
-.subtitle { color: var(--text-secondary); font-size: 1.15rem; line-height: 1.7; max-width: 530px; }
-.ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
-.stats { display: flex; gap: 2.5rem; padding-top: 1rem; }
-.stat { display: flex; flex-direction: column; gap: 0.25rem; }
-.statNum { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; color: var(--accent-light); line-height: 1; }
-.statLabel { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
-.right { display: flex; justify-content: center; }
-.woodCard { width: 100%; max-width: 340px; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-hover); box-shadow: var(--shadow-lg), var(--shadow-gold); background: var(--bg-card); backdrop-filter: var(--glass-blur); }
-.woodCardImg { position: relative; height: 380px; overflow: hidden; }
-.woodCardInfo { padding: 1.5rem; }
-.woodCardTitle { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.4rem; }
-.woodCardPrice { color: var(--accent-gold); font-size: 1rem; font-weight: 600; }
-.scroll { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.6rem; z-index: 2; color: var(--text-muted); font-size: 0.8rem; animation: bounce 2s infinite; }
-.scrollLine { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--accent-gold), transparent); }
-@keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(6px); } }
-@media (max-width: 900px) { .content { grid-template-columns: 1fr; } .right { display: none; } .stats { gap: 1.5rem; } }
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 90px;
+  padding-bottom: 60px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(18, 11, 6, 0.78) 0%, rgba(12, 7, 3, 0.94) 80%);
+}
+
+.ambientGlow {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(201, 146, 58, 0.18) 0%, rgba(181, 116, 58, 0.05) 50%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.centerBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.badgeWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.25rem;
+}
+
+.brandName {
+  font-family: var(--font-heading);
+  font-size: clamp(3.8rem, 9vw, 7.2rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  line-height: 0.95;
+  margin: 0;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.8), 0 0 40px rgba(201, 146, 58, 0.25);
+}
+
+.taglineWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.tagline {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 3.2vw, 2.35rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.taglineAccent {
+  color: var(--accent-light);
+  font-style: italic;
+  font-weight: 600;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  line-height: 1.7;
+  max-width: 680px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+.ctas {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  margin-top: 2.2rem;
+  padding: 1.2rem 2.5rem;
+  background: rgba(30, 18, 10, 0.45);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--shadow-sm);
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.statNum {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-light);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.scroll {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 2;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  animation: bounce 2s infinite;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 35px;
+  background: linear-gradient(to bottom, var(--accent-gold), transparent);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(6px);
+  }
+}
+
+@media (max-width: 768px) {
+  .tagline {
+    white-space: normal;
+    text-align: center;
+  }
+  .stats {
+    gap: 1.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-lg);
+  }
+  .ctas {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+  }
+  .ctas a {
+    width: 100%;
+  }
+}
