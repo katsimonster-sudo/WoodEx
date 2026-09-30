@@ -10,6 +10,7 @@ export interface Product {
 export interface PortfolioItem {
   id: string; category: Category; titleUk: string; titleEn: string;
   descUk: string; descEn: string; image: string; woodType: string; slug: string;
+  dimensions?: string;
 }
 
 export interface DigitalProduct {

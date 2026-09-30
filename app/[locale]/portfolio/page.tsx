@@ -93,6 +93,11 @@ export default function PortfolioPage({ params }: { params: { locale: string } }
                 <h2 className={styles.cardTitle}>
                   {locale === 'en' ? item.titleEn : item.titleUk}
                 </h2>
+                {item.dimensions && (
+                  <p className={styles.cardDimensions}>
+                    📐 {locale === 'en' ? `Size: ${item.dimensions}` : `Розмір: ${item.dimensions}`}
+                  </p>
+                )}
                 <div className={styles.cardActions}>
                   <Link
                     href={`/${locale}/order`}
@@ -128,6 +133,11 @@ export default function PortfolioPage({ params }: { params: { locale: string } }
               </div>
               <div className={styles.modalInfo}>
                 <div className={styles.woodBadge}>🌲 {selectedItem.woodType}</div>
+                {selectedItem.dimensions && (
+                  <div className={styles.modalDimensions}>
+                    📐 {locale === 'en' ? `Dimensions: ${selectedItem.dimensions}` : `Розміри: ${selectedItem.dimensions}`}
+                  </div>
+                )}
                 <h2>{locale === 'en' ? selectedItem.titleEn : selectedItem.titleUk}</h2>
                 <p className={styles.modalDesc}>
                   {locale === 'en' ? selectedItem.descEn : selectedItem.descUk}
