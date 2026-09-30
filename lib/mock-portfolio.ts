@@ -50,6 +50,18 @@ export const portfolioItems: PortfolioItem[] = [
     dimensions: '180 × 45 × 90 см (або за індивідуальними розмірами)',
   },
   {
+    id: 'p-lighthouse-ship',
+    category: 'carving',
+    slug: 'lighthouse-ship-relief',
+    titleUk: 'Барельєф «Вітрила Надії» (маяк і вітрильник)',
+    titleEn: 'Bas-Relief «Sails of Hope» (Lighthouse & Galleon)',
+    descUk: 'Панорамний морський барельєф ручної роботи в пишній різьбленій рамі з хвильовим та витковим орнаментом. Деталізована сцена — скелястий берег з маяком серед дерев та вітрильний корабель у бурхливому морі. Кожен елемент вирізьблений вручну з масиву дерева.',
+    descEn: 'Panoramic maritime bas-relief in an ornate hand-carved frame with wave and rope motifs. Detailed scene — a rocky coastline with a lighthouse amid trees and a tall sailing ship on stormy seas. Every element hand-carved from solid wood.',
+    image: '/images/portfolio/lighthouse-ship-relief.jpg',
+    woodType: 'Масив дуба / ясена (доступно під замовлення)',
+    dimensions: '70 × 50 см (або за індивідуальними розмірами)',
+  },
+  {
     id: 'p-nymph',
     category: 'carving',
     slug: 'nymph-grace-relief',
