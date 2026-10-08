@@ -226,11 +226,11 @@ export default function Header() {
         </div>
 
         <div className={styles.drawerFooter}>
-          <a href="tel:+380970000000" className={styles.phoneLink}>
-            📞 +38 (097) 000-00-00
+          <a href="tel:+380979112973" className={styles.phoneLink}>
+            📞 +38 (097) 911-29-73
           </a>
           <div className={styles.drawerFooterBottom}>
-            <span className={styles.craftBadge}>🌿 100% Натуральне дерево</span>
+            <span>👤 пан Андрій · 📍 м. Київ</span>
           </div>
         </div>
       </aside>

@@ -217,14 +217,14 @@ export default function OrderForm() {
       (comment ? `💬 Коментар: ${comment}\n` : '') +
       `👤 Контакт: ${contactName || 'Клієнт'} (${contactPhone || 'в чаті'})`
     );
-    window.open(`https://t.me/woodex_official?text=${text}`, '_blank');
+    window.open(`https://t.me/+380979112973?text=${text}`, '_blank');
   };
 
   const openViberDirect = () => {
     const text = encodeURIComponent(
       `Вітаю! Замовлення WoodEx: ${currentProduct.titleUk}, ${currentWood.nameUk}, ${length}x${width}см. Орієнтир: ~${estimatedPriceMin.toLocaleString()} ₴.`
     );
-    window.open(`viber://chat?number=%2B380000000000`, '_blank');
+    window.open(`viber://chat?number=%2B380979112973`, '_blank');
   };
 
   if (submitted) {

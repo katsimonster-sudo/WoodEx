@@ -1,10 +1,147 @@
-.page {} .hero { text-align: center; }
-.grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 3rem; align-items: start; }
-.info { display: flex; flex-direction: column; gap: 1rem; }
-.contactCard { padding: 1.5rem 1.75rem; display: flex; align-items: flex-start; gap: 1.2rem; }
-.contactIcon { font-size: 1.7rem; flex-shrink: 0; }
-.contactTitle { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; color: var(--accent-light); margin-bottom: 0.35rem; }
-.contactLine { color: var(--text-secondary); font-size: 0.97rem; }
-.form { padding: 2.5rem; }
-.field { margin-bottom: 1.2rem; }
-@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+.page {
+  padding-bottom: 3rem;
+}
+
+.hero {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contactCard {
+  padding: 1.4rem 1.6rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.contactCard:hover {
+  border-color: var(--accent-sage);
+  box-shadow: var(--shadow-md);
+}
+
+.highlightCard {
+  background: linear-gradient(135deg, rgba(46, 75, 53, 0.05) 0%, rgba(200, 138, 78, 0.08) 100%);
+  border-color: rgba(46, 75, 53, 0.25);
+}
+
+.contactIcon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.contactTitle {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.contactLine {
+  color: var(--text-primary);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.contactSub {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-top: 0.35rem;
+  line-height: 1.4;
+}
+
+.activeLink {
+  color: var(--accent-sage);
+  font-weight: 700;
+  font-size: 1.15rem;
+  text-decoration: none;
+}
+
+.activeLink:hover {
+  text-decoration: underline;
+}
+
+.messengerBtns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+}
+
+.tgBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  background: #229ed9;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.tgBtn:hover {
+  background: #1e8bbd;
+}
+
+.viberBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  background: #7360f2;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.viberBtn:hover {
+  background: #624fe0;
+}
+
+.form {
+  padding: 2.25rem;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.field {
+  margin-bottom: 1.15rem;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .form {
+    padding: 1.5rem;
+  }
+}
