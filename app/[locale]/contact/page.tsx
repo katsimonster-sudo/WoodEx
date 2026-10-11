@@ -46,10 +46,15 @@ export default function ContactPage() {
               <div className={`card ${styles.contactCard}`}>
                 <span className={styles.contactIcon}>📞</span>
                 <div>
-                  <h3 className={styles.contactTitle}>Телефон для зв'язку</h3>
+                  <h3 className={styles.contactTitle}>Телефони для зв'язку</h3>
                   <p className={styles.contactLine}>
                     <a href="tel:+380979112973" className={styles.activeLink}>
                       +38 (097) 911-29-73
+                    </a>
+                  </p>
+                  <p className={styles.contactLine}>
+                    <a href="tel:+380665959513" className={styles.activeLink}>
+                      +38 (066) 595-95-13
                     </a>
                   </p>
                   <p className={styles.contactSub}>Щоденно з 9:00 до 20:00 (дзвінки та повідомлення)</p>
@@ -66,22 +71,25 @@ export default function ContactPage() {
                   </p>
                   <div className={styles.messengerBtns}>
                     <a
-                      href="https://t.me/+380979112973"
+                      href="https://t.me/+380665959513"
                       target="_blank"
                       rel="noopener noreferrer"
                       className={styles.tgBtn}
                     >
-                      ✈️ Telegram (+380979112973)
+                      ✈️ Telegram
                     </a>
                     <a
-                      href="viber://chat?number=%2B380979112973"
+                      href="viber://chat?number=380665959513"
                       target="_blank"
                       rel="noopener noreferrer"
                       className={styles.viberBtn}
                     >
-                      💜 Viber (+380979112973)
+                      💜 Viber
                     </a>
                   </div>
+                  <p className={styles.contactSub} style={{ marginTop: '0.5rem' }}>
+                    Viber / Telegram: +38 (066) 595-95-13
+                  </p>
                 </div>
               </div>
 

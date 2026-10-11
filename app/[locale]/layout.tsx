@@ -94,7 +94,7 @@ export default async function LocaleLayout({
     name: 'WoodEx — Авторська майстерня дерева',
     image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200&q=80',
     url: 'https://woodex.store',
-    telephone: '+380979112973',
+    telephone: ['+380979112973', '+380665959513'],
     priceRange: '₴₴₴',
     address: {
       '@type': 'PostalAddress',
@@ -122,20 +122,29 @@ export default async function LocaleLayout({
         closes: '20:00',
       },
     ],
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: '+380979112973',
-      contactType: 'sales and customer service',
-      contactOption: 'TollFree',
-      areaServed: ['UA', 'EU', 'US'],
-      availableLanguage: ['Ukrainian', 'English'],
-    },
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        telephone: '+380979112973',
+        contactType: 'sales and customer service',
+        areaServed: ['UA', 'EU', 'US'],
+        availableLanguage: ['Ukrainian', 'English'],
+      },
+      {
+        '@type': 'ContactPoint',
+        telephone: '+380665959513',
+        contactType: 'sales and customer service',
+        areaServed: ['UA', 'EU', 'US'],
+        availableLanguage: ['Ukrainian', 'English'],
+      },
+    ],
     founder: {
       '@type': 'Person',
       name: 'пан Андрій',
     },
     sameAs: [
-      'https://t.me/+380979112973',
+      'https://t.me/+380665959513',
+      'viber://chat?number=%2B380665959513',
       'https://woodex.store',
     ],
   };

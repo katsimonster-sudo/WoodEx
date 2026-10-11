@@ -229,6 +229,9 @@ export default function Header() {
           <a href="tel:+380979112973" className={styles.phoneLink}>
             📞 +38 (097) 911-29-73
           </a>
+          <a href="tel:+380665959513" className={styles.phoneLink}>
+            📞 +38 (066) 595-95-13
+          </a>
           <div className={styles.drawerFooterBottom}>
             <span>👤 пан Андрій · 📍 м. Київ</span>
           </div>

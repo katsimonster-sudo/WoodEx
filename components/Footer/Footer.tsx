@@ -39,7 +39,8 @@ export default function Footer() {
             <ul className={styles.contacts}>
               <li>👤 <strong>Контактна особа:</strong> пан Андрій</li>
               <li>📞 <a href="tel:+380979112973">+38 (097) 911-29-73</a></li>
-              <li>✈️ <a href="https://t.me/+380979112973" target="_blank" rel="noopener">Telegram / Viber</a></li>
+              <li>📞 <a href="tel:+380665959513">+38 (066) 595-95-13</a></li>
+              <li>✈️ <a href="https://t.me/+380665959513" target="_blank" rel="noopener">Telegram</a> · <a href="viber://chat?number=380665959513" target="_blank" rel="noopener">Viber</a></li>
               <li>📍 <strong>Виробництво:</strong> м. Київ, Україна</li>
               <li>🕐 Щоденно 9:00–20:00</li>
             </ul>

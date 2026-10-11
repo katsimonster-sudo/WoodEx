@@ -50,30 +50,82 @@
   transition: var(--transition);
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .item:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--border-hover);
+  box-shadow: var(--shadow-lg), 0 8px 24px rgba(201, 146, 58, 0.15);
+  border-color: var(--accent-oak, #c9923a);
 }
 
 .imgWrap {
-  height: 280px;
+  height: 290px;
   position: relative;
   overflow: hidden;
-  background: var(--bg-secondary);
+  background: radial-gradient(ellipse at center, rgba(35, 22, 14, 0.95) 0%, rgba(14, 9, 5, 0.98) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blurBg {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  filter: blur(24px) brightness(0.35);
+  transform: scale(1.15);
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.mainImg {
+  object-fit: contain;
+  object-position: center;
+  padding: 0.75rem;
+  z-index: 1;
+  transition: transform 0.4s ease;
+}
+
+.item:hover .mainImg {
+  transform: scale(1.04);
+}
+
+.zoomBadge {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  z-index: 2;
+  background: rgba(18, 11, 6, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--accent-light, #d4a373);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s;
+}
+
+.item:hover .zoomBadge {
+  background: rgba(201, 146, 58, 0.9);
+  color: #120b06;
+  border-color: var(--accent-oak, #c9923a);
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(30, 25, 21, 0.95) 0%, rgba(30, 25, 21, 0.6) 60%, transparent 100%);
+  background: linear-gradient(to top, rgba(20, 13, 8, 0.95) 0%, rgba(20, 13, 8, 0.4) 60%, transparent 100%);
   opacity: 0;
   transition: var(--transition);
   display: flex;
   align-items: flex-end;
   padding: 1.5rem;
+  z-index: 2;
 }
 
 .item:hover .overlay {
@@ -84,6 +136,7 @@
   color: #ffffff;
   transform: translateY(15px);
   transition: var(--transition);
+  width: 100%;
 }
 
 .item:hover .overlayContent {
@@ -94,7 +147,7 @@
   display: inline-block;
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--accent-oak-light);
+  color: var(--accent-light, #d4a373);
   margin-bottom: 0.4rem;
   letter-spacing: 0.5px;
 }

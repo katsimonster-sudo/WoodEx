@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { portfolioItems } from '@/lib/mock-portfolio';
+import LightboxViewer, { type LightboxItem } from '@/components/LightboxViewer/LightboxViewer';
 import styles from './portfolio.module.css';
 
 const categories = [
@@ -15,12 +16,23 @@ const categories = [
 
 export default function PortfolioPage({ params }: { params: { locale: string } }) {
   const locale = params.locale || 'uk';
+  const isEn = locale === 'en';
   const [activeFilter, setActiveFilter] = useState('all');
-  const [selectedItem, setSelectedItem] = useState<typeof portfolioItems[0] | null>(null);
+  const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
 
   const filteredItems = activeFilter === 'all'
     ? portfolioItems
     : portfolioItems.filter(item => item.category === activeFilter);
+
+  const lightboxItems: LightboxItem[] = filteredItems.map(item => ({
+    id: item.id,
+    image: item.image,
+    title: isEn ? item.titleEn : item.titleUk,
+    description: isEn ? item.descEn : item.descUk,
+    woodType: item.woodType,
+    dimensions: item.dimensions,
+    orderUrl: `/${locale}/order`,
+  }));
 
   return (
     <div className={styles.portfolioPage}>
@@ -31,9 +43,9 @@ export default function PortfolioPage({ params }: { params: { locale: string } }
             Портфоліо <span className="gradient-text">авторських робіт</span>
           </h1>
           <p className={styles.subtitle}>
-            {locale === 'en'
-              ? 'Unique handmade wooden creations crafted with passion, respect for nature and attention to every grain.'
-              : 'Унікальні вироби з натурального дерева ручної роботи. Кожен предмет створений в єдиному екземплярі з душею та повагою до природи.'}
+            {isEn
+              ? 'Unique handmade wooden creations crafted with passion, respect for nature and attention to every grain. Click any piece to inspect with zoom.'
+              : 'Унікальні вироби з натурального дерева ручної роботи. Натисніть на будь-яку картку, щоб розглянути різьблення та фактуру з наближенням.'}
           </p>
 
           <div className={styles.filters}>
@@ -43,7 +55,7 @@ export default function PortfolioPage({ params }: { params: { locale: string } }
                 onClick={() => setActiveFilter(cat.value)}
                 className={`${styles.filterBtn} ${activeFilter === cat.value ? styles.activeFilter : ''}`}
               >
-                {locale === 'en' ? cat.labelEn : cat.labelUk}
+                {isEn ? cat.labelEn : cat.labelUk}
                 <span className={styles.count}>
                   {cat.value === 'all'
                     ? portfolioItems.length
@@ -59,26 +71,48 @@ export default function PortfolioPage({ params }: { params: { locale: string } }
             <article
               key={item.id}
               className={`${styles.card} ${idx % 3 === 0 ? styles.featured : ''}`}
-              onClick={() => setSelectedItem(item)}
+              onClick={() => setLightboxIdx(idx)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setLightboxIdx(idx);
+                }
+              }}
             >
               <div className={styles.imageContainer}>
+                {/* Ambient blur backdrop */}
                 <Image
                   src={item.image}
-                  alt={locale === 'en' ? item.titleEn : item.titleUk}
+                  alt=""
                   fill
-                  style={{ objectFit: 'cover' }}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  aria-hidden="true"
+                  className={styles.blurBg}
+                  sizes="350px"
                 />
+
+                {/* Main uncropped centered image */}
+                <Image
+                  src={item.image}
+                  alt={isEn ? item.titleEn : item.titleUk}
+                  fill
+                  className={styles.mainImg}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={idx < 2}
+                />
+
                 <div className={styles.woodBadge}>
                   🌲 {item.woodType}
                 </div>
+
                 <div className={styles.overlay}>
                   <div className={styles.overlayText}>
                     <p className={styles.overlayDesc}>
-                      {locale === 'en' ? item.descEn : item.descUk}
+                      {isEn ? item.descEn : item.descUk}
                     </p>
                     <span className={styles.viewDetails}>
-                      🔍 {locale === 'en' ? 'Quick view' : 'Детальний перегляд'}
+                      🔍 {isEn ? 'Click to zoom & inspect' : 'Відкрити з наближенням'}
                     </span>
                   </div>
                 </div>
@@ -87,15 +121,15 @@ export default function PortfolioPage({ params }: { params: { locale: string } }
               <div className={styles.cardBody}>
                 <div className={styles.cardMeta}>
                   <span className={styles.categoryLabel}>
-                    {categories.find(c => c.value === item.category)?.[locale === 'en' ? 'labelEn' : 'labelUk']}
+                    {categories.find(c => c.value === item.category)?.[isEn ? 'labelEn' : 'labelUk']}
                   </span>
                 </div>
                 <h2 className={styles.cardTitle}>
-                  {locale === 'en' ? item.titleEn : item.titleUk}
+                  {isEn ? item.titleEn : item.titleUk}
                 </h2>
                 {item.dimensions && (
                   <p className={styles.cardDimensions}>
-                    📐 {locale === 'en' ? `Size: ${item.dimensions}` : `Розмір: ${item.dimensions}`}
+                    📐 {isEn ? `Size: ${item.dimensions}` : `Розмір: ${item.dimensions}`}
                   </p>
                 )}
                 <div className={styles.cardActions}>
@@ -104,7 +138,7 @@ export default function PortfolioPage({ params }: { params: { locale: string } }
                     className="btn btn-primary btn-sm"
                     onClick={(e) => e.stopPropagation()}
                   >
-                    ✍️ {locale === 'en' ? 'Order similar' : 'Замовити схоже'}
+                    ✍️ {isEn ? 'Order similar' : 'Замовити схоже'}
                   </Link>
                 </div>
               </div>
@@ -112,48 +146,16 @@ export default function PortfolioPage({ params }: { params: { locale: string } }
           ))}
         </div>
 
-        {/* Modal preview */}
-        {selectedItem && (
-          <div className={styles.modalBackdrop} onClick={() => setSelectedItem(null)}>
-            <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-              <button
-                className={styles.closeBtn}
-                onClick={() => setSelectedItem(null)}
-                aria-label="Close"
-              >
-                ✕
-              </button>
-              <div className={styles.modalImageWrapper}>
-                <Image
-                  src={selectedItem.image}
-                  alt={locale === 'en' ? selectedItem.titleEn : selectedItem.titleUk}
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-              <div className={styles.modalInfo}>
-                <div className={styles.woodBadge}>🌲 {selectedItem.woodType}</div>
-                {selectedItem.dimensions && (
-                  <div className={styles.modalDimensions}>
-                    📐 {locale === 'en' ? `Dimensions: ${selectedItem.dimensions}` : `Розміри: ${selectedItem.dimensions}`}
-                  </div>
-                )}
-                <h2>{locale === 'en' ? selectedItem.titleEn : selectedItem.titleUk}</h2>
-                <p className={styles.modalDesc}>
-                  {locale === 'en' ? selectedItem.descEn : selectedItem.descUk}
-                </p>
-                <div className={styles.modalFooter}>
-                  <Link
-                    href={`/${locale}/order`}
-                    className="btn btn-primary"
-                    onClick={() => setSelectedItem(null)}
-                  >
-                    ✍️ {locale === 'en' ? 'Order custom piece' : 'Замовити індивідуальний виріб'}
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* Fullscreen Zoomable Lightbox */}
+        {lightboxIdx !== null && (
+          <LightboxViewer
+            items={lightboxItems}
+            currentIndex={lightboxIdx}
+            isOpen={lightboxIdx !== null}
+            onClose={() => setLightboxIdx(null)}
+            onNavigate={newIdx => setLightboxIdx(newIdx)}
+            locale={locale}
+          />
         )}
       </div>
     </div>
